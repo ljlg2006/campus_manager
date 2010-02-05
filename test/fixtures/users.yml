@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+alice:
+  name: Alice
+  password: aaa
+  email: alice@example.com
+
+bruce:
+  name: Bruce 
+  password: aaa
+  email: bruce@example.com
+  
+tom:
+  name: Tom 
+  password: aaa
+  email: tom@example.com
+  
+jean:
+  name: Jean 
+  password: aaa
+  email: jean@example.com
+  
+nancy:
+  name: Nancy 
+  password: aaa
+  email: nancy@example.com
+  
+ross:
+  name: ross 
+  password: ross
+  email: ross@example.com
+  
+  
+# Users that will be both teachers and students..
+

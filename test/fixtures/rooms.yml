@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+cntr_120:
+  building: cntr
+  name: 120
+  description: rrrrrr
+
+cntr_130:
+  building: cntr
+  name: 130
+  description: ssssss
+  
+cntr_152:
+  building: cntr
+  name: 152
+  description: ssssss
+  
+prlta_201:
+  building: prlta
+  name: 130
+  description: ssssss
+
+prlta_213:
+  building: prlta
+  name: 213
+  description: good
+
+santn_339:
+  building: santn
+  name: 339
+  description: tio
+
+

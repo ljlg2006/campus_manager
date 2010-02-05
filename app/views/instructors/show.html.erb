@@ -1,0 +1,13 @@
+<p>
+  <b>User:</b>
+  <%=h @instructor.user_id %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%=h @instructor.course_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_instructor_path(@instructor) %> |
+<%= link_to 'Back', instructors_path %>

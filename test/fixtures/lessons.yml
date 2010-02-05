@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+cst533_1:
+  course: 2010_cst533_spring
+  name: Introduction
+  description: MyText
+
+cst533_2:
+  course: 2010_cst533_spring
+  name: Horizontal Architectures
+  description: MyText

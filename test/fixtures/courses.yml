@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+2010_cst533_spring:
+  room: cntr_152
+  semester: 2010_spring
+  name: CST 533
+  description: Database-centric Enterprise Application Development
+  
+2010_cst100_spring:
+  room: cntr_130
+  semester: 2010_spring
+  name: CST 100
+  description: Object-Oriented Software Development 1
+  
+2010_cst200_fall:
+  room: cntr_130
+  semester: 2010_fall
+  name: CST 200
+  description: Object-Oriented Software Development 2
+  
+2010_cst420_spring:
+  room: prlta_213
+  semester: 2010_spring
+  name: CST 420
+  description: Foundation of Distributed Web Application
+  
+2010_cst556_spring:
+  room: prlta_213
+  semester: 2010_spring
+  name: CST 556
+  description: Windows .NET

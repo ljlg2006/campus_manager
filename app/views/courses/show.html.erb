@@ -1,0 +1,27 @@
+<p>
+  <b>Room:</b>
+  <%=h @course.room_id %>
+</p>
+
+<p>
+  <b>Semester:</b>
+  <%=h @course.semester_id %>
+</p>
+
+<p>
+  <b>Room Name:</b>
+  <%=h @course.room.name%></p>
+
+
+<p>
+  <b>Students count:</b>: <%= link_to @course.students.count%></tr>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @course.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

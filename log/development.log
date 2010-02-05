@@ -1,0 +1,1329 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (94.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "buildings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "building_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "lessons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "text" description NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100204012428')[0m
+Migrating to CreateCourses (20100204012553)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "room_id" integer NOT NULL, "semester_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100204012553')[0m
+Migrating to CreateUsers (20100204012650)
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "password" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100204012650')[0m
+Migrating to CreateStudents (20100204012743)
+  [4;35;1mSQL (15.0ms)[0m   [0mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100204012743')[0m
+Migrating to CreateInstructors (20100204012827)
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (125.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (109.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "buildings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "building_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCREATE TABLE "lessons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "text" description NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012428')[0m
+Migrating to CreateCourses (20100204012553)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "room_id" integer NOT NULL, "semester_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (16.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012553')[0m
+Migrating to CreateUsers (20100204012650)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "password" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012650')[0m
+Migrating to CreateStudents (20100204012743)
+  [4;36;1mSQL (15.0ms)[0m   [0;1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012743')[0m
+Migrating to CreateInstructors (20100204012827)
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (124.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (110.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "buildings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "building_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "lessons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "text" description NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012428')[0m
+Migrating to CreateCourses (20100204012553)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "room_id" integer NOT NULL, "semester_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012553')[0m
+Migrating to CreateUsers (20100204012650)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "password" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012650')[0m
+Migrating to CreateStudents (20100204012743)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012743')[0m
+Migrating to CreateInstructors (20100204012827)
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCREATE TABLE "instructors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012827')[0m
+Migrating to CreateSemesters (20100204012919)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "semesters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012919')[0m
+Migrating to CreateLinks (20100204013011)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "url" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204013011')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("buildings")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("instructors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("links")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("rooms")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("semesters")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("students")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing BuildingsController#index (for 127.0.0.1 at 2010-02-03 18:53:14) [GET]
+  [4;36;1mBuilding Load (0.0ms)[0m   [0;1mSELECT * FROM "buildings" [0m
+Rendering template within layouts/buildings
+Rendering buildings/index
+Completed in 9142ms (View: 9095, DB: 0) | 200 OK [http://localhost/buildings]
+
+
+Processing RoomsController#index (for 127.0.0.1 at 2010-02-03 18:53:36) [GET]
+  [4;35;1mRoom Load (0.0ms)[0m   [0mSELECT * FROM "rooms" [0m
+Rendering template within layouts/rooms
+Rendering rooms/index
+Completed in 93ms (View: 62, DB: 0) | 200 OK [http://localhost/rooms]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 18:53:43) [GET]
+  [4;36;1mCourse Load (16.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 109ms (View: 78, DB: 16) | 200 OK [http://localhost/courses]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-03 18:53:51) [GET]
+
+ActionController::RoutingError (No route matches "/lesson" with {:method=>:get}):
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing BuildingsController#index (for 127.0.0.1 at 2010-02-03 18:54:00) [GET]
+  [4;35;1mBuilding Load (0.0ms)[0m   [0mSELECT * FROM "buildings" [0m
+Rendering template within layouts/buildings
+Rendering buildings/index
+Completed in 62ms (View: 15, DB: 0) | 200 OK [http://localhost/buildings]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 18:54:14) [GET]
+  [4;36;1mCourse Load (0.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 46ms (View: 15, DB: 0) | 200 OK [http://localhost/courses]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-02-03 18:54:27) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 94ms (View: 62, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2010-02-03 18:54:33) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 109ms (View: 78, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing InstructorsController#index (for 127.0.0.1 at 2010-02-03 18:54:46) [GET]
+  [4;35;1mInstructor Load (0.0ms)[0m   [0mSELECT * FROM "instructors" [0m
+Rendering template within layouts/instructors
+Rendering instructors/index
+Completed in 109ms (View: 78, DB: 0) | 200 OK [http://localhost/instructors]
+
+
+Processing SemestersController#index (for 127.0.0.1 at 2010-02-03 18:54:54) [GET]
+  [4;36;1mSemester Load (0.0ms)[0m   [0;1mSELECT * FROM "semesters" [0m
+Rendering template within layouts/semesters
+Rendering semesters/index
+Completed in 110ms (View: 78, DB: 0) | 200 OK [http://localhost/semesters]
+
+
+Processing LinksController#index (for 127.0.0.1 at 2010-02-03 18:54:59) [GET]
+  [4;35;1mLink Load (0.0ms)[0m   [0mSELECT * FROM "links" [0m
+Rendering template within layouts/links
+Rendering links/index
+Completed in 93ms (View: 62, DB: 0) | 200 OK [http://localhost/links]
+  [4;36;1mSQL (15.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (94.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (94.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "buildings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "building_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "lessons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "text" description NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (15.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012428')[0m
+Migrating to CreateCourses (20100204012553)
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "room_id" integer NOT NULL, "semester_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012553')[0m
+Migrating to CreateUsers (20100204012650)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "password" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012650')[0m
+Migrating to CreateStudents (20100204012743)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (16.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012743')[0m
+Migrating to CreateInstructors (20100204012827)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "instructors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012827')[0m
+Migrating to CreateSemesters (20100204012919)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "semesters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (16.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012919')[0m
+Migrating to CreateLinks (20100204013011)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "url" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204013011')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("buildings")[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("instructors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("links")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("rooms")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("semesters")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("students")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (78.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (93.0ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (265.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (62.0ms)[0m   [0;1mCREATE TABLE `buildings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `code` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `description` text NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;36;1mSQL (78.0ms)[0m   [0;1mCREATE TABLE `rooms` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `building_id` int(11) NOT NULL, `name` varchar(255) NOT NULL, `description` text NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'description NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoD' at line 1: CREATE TABLE `lessons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `course_id` int(11) NOT NULL, `name` varchar(255) NOT NULL, `text` description NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (141.0ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (203.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (110.0ms)[0m   [0;1mCREATE TABLE `buildings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `code` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `description` text NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;36;1mSQL (78.0ms)[0m   [0;1mCREATE TABLE `rooms` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `building_id` int(11) NOT NULL, `name` varchar(255) NOT NULL, `description` text NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;36;1mSQL (78.0ms)[0m   [0;1mCREATE TABLE `lessons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `course_id` int(11) NOT NULL, `name` varchar(255) NOT NULL, `description` text NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012428')[0m
+Migrating to CreateCourses (20100204012553)
+  [4;36;1mSQL (109.0ms)[0m   [0;1mCREATE TABLE `courses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `room_id` int(11) NOT NULL, `semester_id` int(11) NOT NULL, `name` varchar(255) NOT NULL, `description` text NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012553')[0m
+Migrating to CreateUsers (20100204012650)
+  [4;36;1mSQL (78.0ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `password` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (63.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012650')[0m
+Migrating to CreateStudents (20100204012743)
+  [4;36;1mSQL (94.0ms)[0m   [0;1mCREATE TABLE `students` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `course_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012743')[0m
+Migrating to CreateInstructors (20100204012827)
+  [4;36;1mSQL (78.0ms)[0m   [0;1mCREATE TABLE `instructors` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `course_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012827')[0m
+Migrating to CreateSemesters (20100204012919)
+  [4;36;1mSQL (78.0ms)[0m   [0;1mCREATE TABLE `semesters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `start_date` date NOT NULL, `end_date` date NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012919')[0m
+Migrating to CreateLinks (20100204013011)
+  [4;36;1mSQL (125.0ms)[0m   [0;1mCREATE TABLE `links` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `course_id` int(11) NOT NULL, `name` varchar(255) NOT NULL, `url` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (78.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204013011')[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mSHOW FIELDS FROM `buildings`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mdescribe `buildings`[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mSHOW KEYS FROM `buildings`[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mSHOW FIELDS FROM `courses`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `courses`[0m
+  [4;36;1mSQL (62.0ms)[0m   [0;1mSHOW KEYS FROM `courses`[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mSHOW FIELDS FROM `instructors`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mdescribe `instructors`[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mSHOW KEYS FROM `instructors`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSHOW FIELDS FROM `lessons`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `lessons`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `lessons`[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mSHOW FIELDS FROM `links`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `links`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `links`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `rooms`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `rooms`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSHOW KEYS FROM `rooms`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `semesters`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `semesters`[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mSHOW KEYS FROM `semesters`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `students`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `students`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `students`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LinksController#index (for 127.0.0.1 at 2010-02-03 21:01:31) [GET]
+  [4;35;1mLink Load (0.0ms)[0m   [0mSELECT * FROM `links` [0m
+Rendering template within layouts/links
+Rendering links/index
+  [4;36;1mLink Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `links`[0m
+Completed in 8049ms (View: 7941, DB: 15) | 200 OK [http://localhost/links]
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (94.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (119.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "buildings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "building_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "lessons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012428')[0m
+Migrating to CreateCourses (20100204012553)
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "room_id" integer NOT NULL, "semester_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012553')[0m
+Migrating to CreateUsers (20100204012650)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "password" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012650')[0m
+Migrating to CreateStudents (20100204012743)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012743')[0m
+Migrating to CreateInstructors (20100204012827)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "instructors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012827')[0m
+Migrating to CreateSemesters (20100204012919)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "semesters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012919')[0m
+Migrating to CreateLinks (20100204013011)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "url" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204013011')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("buildings")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("instructors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("lessons")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("links")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("rooms")[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_list("semesters")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("students")[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing BuildingsController#index (for 127.0.0.1 at 2010-02-03 22:29:38) [GET]
+  [4;36;1mBuilding Load (4.0ms)[0m   [0;1mSELECT * FROM "buildings" [0m
+Rendering template within layouts/buildings
+Rendering buildings/index
+Completed in 8915ms (View: 8731, DB: 4) | 200 OK [http://localhost/buildings]
+
+
+Processing BuildingsController#show (for 127.0.0.1 at 2010-02-03 22:30:00) [GET]
+  Parameters: {"id"=>"250454208"}
+  [4;35;1mBuilding Load (4.0ms)[0m   [0mSELECT * FROM "buildings" WHERE ("buildings"."id" = 250454208) [0m
+Rendering template within layouts/buildings
+Rendering buildings/show
+Completed in 100ms (View: 53, DB: 4) | 200 OK [http://localhost/buildings/250454208]
+
+
+Processing RoomsController#index (for 127.0.0.1 at 2010-02-03 22:30:09) [GET]
+  [4;36;1mRoom Load (6.0ms)[0m   [0;1mSELECT * FROM "rooms" [0m
+Rendering template within layouts/rooms
+Rendering rooms/index
+Completed in 323ms (View: 243, DB: 6) | 200 OK [http://localhost/rooms]
+
+
+Processing BuildingsController#index (for 127.0.0.1 at 2010-02-03 22:30:53) [GET]
+  [4;35;1mBuilding Load (4.0ms)[0m   [0mSELECT * FROM "buildings" [0m
+Rendering template within layouts/buildings
+Rendering buildings/index
+Completed in 106ms (View: 65, DB: 4) | 200 OK [http://localhost/buildings]
+
+
+Processing BuildingsController#show (for 127.0.0.1 at 2010-02-03 22:31:30) [GET]
+  Parameters: {"id"=>"417000420"}
+  [4;36;1mBuilding Load (1.0ms)[0m   [0;1mSELECT * FROM "buildings" WHERE ("buildings"."id" = 417000420) [0m
+Rendering template within layouts/buildings
+Rendering buildings/show
+Completed in 227ms (View: 20, DB: 1) | 200 OK [http://localhost/buildings/417000420]
+
+
+Processing BuildingsController#show (for 127.0.0.1 at 2010-02-03 22:31:41) [GET]
+  Parameters: {"id"=>"users"}
+  [4;35;1mBuilding Load (2.0ms)[0m   [0mSELECT * FROM "buildings" WHERE ("buildings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Building with ID=users):
+  app/controllers/buildings_controller.rb:16:in `show'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (198.0ms)
+Rendered rescues/_request_and_response (10.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-02-03 22:31:55) [GET]
+  [4;36;1mUser Load (6.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 244ms (View: 180, DB: 6) | 200 OK [http://localhost/users]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2010-02-03 22:32:03) [GET]
+  [4;35;1mStudent Load (6.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 200ms (View: 158, DB: 6) | 200 OK [http://localhost/students]
+
+
+Processing InstructorsController#index (for 127.0.0.1 at 2010-02-03 22:32:21) [GET]
+  [4;36;1mInstructor Load (5.0ms)[0m   [0;1mSELECT * FROM "instructors" [0m
+Rendering template within layouts/instructors
+Rendering instructors/index
+Completed in 403ms (View: 358, DB: 5) | 200 OK [http://localhost/instructors]
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (154.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (142.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "buildings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "building_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCREATE TABLE "lessons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012428')[0m
+Migrating to CreateCourses (20100204012553)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "room_id" integer NOT NULL, "semester_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012553')[0m
+Migrating to CreateUsers (20100204012650)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "password" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012650')[0m
+Migrating to CreateStudents (20100204012743)
+  [4;36;1mSQL (6.0ms)[0m   [0;1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012743')[0m
+Migrating to CreateInstructors (20100204012827)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "instructors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012827')[0m
+Migrating to CreateSemesters (20100204012919)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "semesters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012919')[0m
+Migrating to CreateLinks (20100204013011)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "url" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204013011')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_list("buildings")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("instructors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("lessons")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("links")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("rooms")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("semesters")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mPRAGMA index_list("students")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mBuilding Load (3.0ms)[0m   [0;1mSELECT * FROM "buildings" LIMIT 1[0m
+  [4;35;1mRoom Load (2.0ms)[0m   [0mSELECT * FROM "rooms" LIMIT 1[0m
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mRoom Load (1.0ms)[0m   [0mSELECT * FROM "rooms" WHERE ("rooms"."id" = 0) [0m
+  [4;36;1mRoom Load (3.0ms)[0m   [0;1mSELECT * FROM "rooms" LIMIT 1[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mRoom Load (3.0ms)[0m   [0;1mSELECT * FROM "rooms" LIMIT 1[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+Migrating to CreateRooms (20100204012323)
+Migrating to CreateLessons (20100204012428)
+Migrating to CreateCourses (20100204012553)
+Migrating to CreateUsers (20100204012650)
+Migrating to CreateStudents (20100204012743)
+Migrating to CreateInstructors (20100204012827)
+Migrating to CreateSemesters (20100204012919)
+Migrating to CreateLinks (20100204013011)
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (160.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (101.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "buildings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "building_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "lessons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012428')[0m
+Migrating to CreateCourses (20100204012553)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "room_id" integer NOT NULL, "semester_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012553')[0m
+Migrating to CreateUsers (20100204012650)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "password" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (6.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012650')[0m
+Migrating to CreateStudents (20100204012743)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012743')[0m
+Migrating to CreateInstructors (20100204012827)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "instructors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012827')[0m
+Migrating to CreateSemesters (20100204012919)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "semesters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012919')[0m
+Migrating to CreateLinks (20100204013011)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "url" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204013011')[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("buildings")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_list("instructors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("lessons")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("links")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mPRAGMA index_list("rooms")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("semesters")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("students")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing BuildingsController#index (for 127.0.0.1 at 2010-02-03 23:04:49) [GET]
+  [4;36;1mBuilding Load (4.0ms)[0m   [0;1mSELECT * FROM "buildings" [0m
+Rendering template within layouts/buildings
+Rendering buildings/index
+Completed in 462ms (View: 297, DB: 4) | 200 OK [http://localhost/buildings]
+
+
+Processing RoomsController#index (for 127.0.0.1 at 2010-02-03 23:04:55) [GET]
+  [4;35;1mSQL (4.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NameError (undefined local variable or method `building' for #<Class:0xd71f9b4>):
+  app/models/room.rb:7
+  app/controllers/rooms_controller.rb:5:in `index'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (274.0ms)
+Rendered rescues/_request_and_response (11.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RoomsController#index (for 127.0.0.1 at 2010-02-03 23:05:36) [GET]
+  [4;35;1mSQL (5.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NameError (undefined local variable or method `building' for #<Class:0xd5efabc>):
+  app/models/room.rb:7
+  app/controllers/rooms_controller.rb:5:in `index'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (407.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BuildingsController#index (for 127.0.0.1 at 2010-02-03 23:05:50) [GET]
+  [4;35;1mBuilding Load (4.0ms)[0m   [0mSELECT * FROM "buildings" [0m
+Rendering template within layouts/buildings
+Rendering buildings/index
+Completed in 132ms (View: 97, DB: 4) | 200 OK [http://localhost/buildings]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-02-03 23:05:56) [GET]
+  [4;36;1mUser Load (5.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 249ms (View: 192, DB: 5) | 200 OK [http://localhost/users]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2010-02-03 23:06:04) [GET]
+  [4;35;1mStudent Load (5.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 199ms (View: 160, DB: 5) | 200 OK [http://localhost/students]
+
+
+Processing RoomsController#index (for 127.0.0.1 at 2010-02-03 23:06:11) [GET]
+  [4;36;1mSQL (6.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (4.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NameError (undefined local variable or method `building' for #<Class:0xd58a7d4>):
+  app/models/room.rb:7
+  app/controllers/rooms_controller.rb:5:in `index'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (232.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RoomsController#index (for 127.0.0.1 at 2010-02-03 23:06:49) [GET]
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NameError (undefined local variable or method `building_id' for #<Class:0xd78fd18>):
+  app/models/room.rb:7
+  app/controllers/rooms_controller.rb:5:in `index'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (220.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RoomsController#index (for 127.0.0.1 at 2010-02-03 23:16:16) [GET]
+  [4;36;1mRoom Load (3.0ms)[0m   [0;1mSELECT * FROM "rooms" [0m
+Rendering template within layouts/rooms
+Rendering rooms/index
+Completed in 224ms (View: 184, DB: 3) | 200 OK [http://localhost/rooms]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 23:18:49) [GET]
+  [4;35;1mCourse Load (5.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 408ms (View: 183, DB: 5) | 200 OK [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-02-03 23:18:52) [GET]
+  Parameters: {"id"=>"37330886"}
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 37330886) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+  [4;35;1mRoom Load (1.0ms)[0m   [0mSELECT * FROM "rooms" WHERE ("rooms"."id" = 0) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/courses/show.html.erb:
+10: 
+11: <p>
+12:   <b>Room Name:</b>
+13:   <%=h @course.room.name %>
+14: </p>
+15: 
+16: <p>
+
+    app/views/courses/show.html.erb:13
+    app/controllers/courses_controller.rb:18:in `show'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (259.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 23:20:16) [GET]
+  [4;36;1mCourse Load (8.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 223ms (View: 151, DB: 8) | 200 OK [http://localhost/courses/]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-02-03 23:20:18) [GET]
+  Parameters: {"id"=>"37330886"}
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 37330886) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "students" WHERE ("students".course_id = 37330886) [0m
+Completed in 129ms (View: 73, DB: 2) | 200 OK [http://localhost/courses/37330886]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 23:21:58) [GET]
+  [4;35;1mCourse Load (6.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 144ms (View: 95, DB: 6) | 200 OK [http://localhost/courses/]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-02-03 23:22:00) [GET]
+  Parameters: {"id"=>"120222578"}
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 120222578) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+  [4;35;1mRoom Load (1.0ms)[0m   [0mSELECT * FROM "rooms" WHERE ("rooms"."id" = 0) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/courses/show.html.erb:
+10: 
+11: <p>
+12:   <b>Room Name:</b>
+13:   <%=h @course.room.name%></p>
+14: 
+15: 
+16: <p>
+
+    app/views/courses/show.html.erb:13
+    app/controllers/courses_controller.rb:18:in `show'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (260.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 23:24:11) [GET]
+  [4;36;1mCourse Load (8.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 181ms (View: 110, DB: 8) | 200 OK [http://localhost/courses/]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-02-03 23:24:14) [GET]
+  Parameters: {"id"=>"37330886"}
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 37330886) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+  [4;36;1mRoom Load (1.0ms)[0m   [0;1mSELECT * FROM "rooms" WHERE ("rooms"."id" = 0) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/courses/show.html.erb:
+10: 
+11: <p>
+12:   <b>Room Name:</b>
+13:   <%=h @course.room.name%></p>
+14: 
+15: 
+16: <p>
+
+    app/views/courses/show.html.erb:13
+    app/controllers/courses_controller.rb:18:in `show'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (306.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (124.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (98.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "buildings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "building_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "lessons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012428')[0m
+Migrating to CreateCourses (20100204012553)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "room_id" integer NOT NULL, "semester_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012553')[0m
+Migrating to CreateUsers (20100204012650)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "password" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012650')[0m
+Migrating to CreateStudents (20100204012743)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012743')[0m
+Migrating to CreateInstructors (20100204012827)
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCREATE TABLE "instructors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012827')[0m
+Migrating to CreateSemesters (20100204012919)
+  [4;36;1mSQL (6.0ms)[0m   [0;1mCREATE TABLE "semesters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012919')[0m
+Migrating to CreateLinks (20100204013011)
+  [4;36;1mSQL (6.0ms)[0m   [0;1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "url" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204013011')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_list("buildings")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("instructors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("lessons")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("links")[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mPRAGMA index_list("rooms")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("semesters")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("students")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 23:26:57) [GET]
+  [4;36;1mCourse Load (6.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 520ms (View: 317, DB: 6) | 200 OK [http://localhost/courses/]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-02-03 23:27:00) [GET]
+  Parameters: {"id"=>"37330886"}
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 37330886) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+  [4;36;1mRoom Load (1.0ms)[0m   [0;1mSELECT * FROM "rooms" WHERE ("rooms"."id" = 0) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/courses/show.html.erb:
+10: 
+11: <p>
+12:   <b>Room Name:</b>
+13:   <%=h @course.room.name%></p>
+14: 
+15: 
+16: <p>
+
+    app/views/courses/show.html.erb:13
+    app/controllers/courses_controller.rb:18:in `show'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (428.0ms)
+Rendered rescues/_request_and_response (9.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RoomsController#index (for 127.0.0.1 at 2010-02-03 23:38:21) [GET]
+  [4;36;1mRoom Load (6.0ms)[0m   [0;1mSELECT * FROM "rooms" [0m
+Rendering template within layouts/rooms
+Rendering rooms/index
+Completed in 9060ms (View: 8854, DB: 6) | 200 OK [http://localhost/rooms]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 23:38:47) [GET]
+  [4;35;1mCourse Load (8.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 260ms (View: 196, DB: 8) | 200 OK [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-02-03 23:38:49) [GET]
+  Parameters: {"id"=>"37330886"}
+  [4;36;1mCourse Load (3.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 37330886) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+  [4;35;1mRoom Load (1.0ms)[0m   [0mSELECT * FROM "rooms" WHERE ("rooms"."id" = 0) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/courses/show.html.erb:
+10: 
+11: <p>
+12:   <b>Room Name:</b>
+13:   <%=h @course.room.name%></p>
+14: 
+15: 
+16: <p>
+
+    app/views/courses/show.html.erb:13
+    app/controllers/courses_controller.rb:18:in `show'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (442.0ms)
+Rendered rescues/_request_and_response (8.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (211.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (95.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "buildings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "building_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "lessons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012428')[0m
+Migrating to CreateCourses (20100204012553)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "room_id" integer NOT NULL, "semester_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012553')[0m
+Migrating to CreateUsers (20100204012650)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "password" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012650')[0m
+Migrating to CreateStudents (20100204012743)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012743')[0m
+Migrating to CreateInstructors (20100204012827)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "instructors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012827')[0m
+Migrating to CreateSemesters (20100204012919)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "semesters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012919')[0m
+Migrating to CreateLinks (20100204013011)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "url" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204013011')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("buildings")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_list("instructors")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mPRAGMA index_list("lessons")[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_list("links")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mPRAGMA index_list("rooms")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("semesters")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mPRAGMA index_list("students")[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mRoom Load (6.0ms)[0m   [0;1mSELECT * FROM "rooms" LIMIT 1[0m
+  [4;35;1mBuilding Load (1.0ms)[0m   [0mSELECT * FROM "buildings" WHERE ("buildings"."id" = 417000420) [0m
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mRoom Load (1.0ms)[0m   [0mSELECT * FROM "rooms" WHERE ("rooms"."id" = 0) [0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 23:45:39) [GET]
+  [4;36;1mCourse Load (8.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 531ms (View: 317, DB: 8) | 200 OK [http://localhost/courses/]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-02-03 23:45:42) [GET]
+  Parameters: {"id"=>"37330886"}
+  [4;35;1mCourse Load (2.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 37330886) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+  [4;36;1mRoom Load (1.0ms)[0m   [0;1mSELECT * FROM "rooms" WHERE ("rooms"."id" = 0) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/courses/show.html.erb:
+10: 
+11: <p>
+12:   <b>Room Name:</b>
+13:   <%=h @course.room.name%></p>
+14: 
+15: 
+16: <p>
+
+    app/views/courses/show.html.erb:13
+    app/controllers/courses_controller.rb:18:in `show'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (430.0ms)
+Rendered rescues/_request_and_response (9.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 23:46:26) [GET]
+  [4;35;1mCourse Load (5.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 146ms (View: 96, DB: 5) | 200 OK [http://localhost/courses/]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-02-03 23:46:31) [GET]
+  Parameters: {"id"=>"267751605"}
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 267751605) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+  [4;35;1mRoom Load (2.0ms)[0m   [0mSELECT * FROM "rooms" WHERE ("rooms"."id" = 0) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #13 of app/views/courses/show.html.erb:
+10: 
+11: <p>
+12:   <b>Room Name:</b>
+13:   <%=h @course.room.name%></p>
+14: 
+15: 
+16: <p>
+
+    app/views/courses/show.html.erb:13
+    app/controllers/courses_controller.rb:18:in `show'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (260.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RoomsController#index (for 127.0.0.1 at 2010-02-03 23:48:12) [GET]
+  [4;36;1mRoom Load (5.0ms)[0m   [0;1mSELECT * FROM "rooms" [0m
+Rendering template within layouts/rooms
+Rendering rooms/index
+Completed in 391ms (View: 352, DB: 5) | 200 OK [http://localhost/rooms]
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 23:48:23) [GET]
+  [4;35;1mCourse Load (7.0ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 160ms (View: 100, DB: 7) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (159.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (105.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBuildings (20100204012216)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "buildings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "code" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012216')[0m
+Migrating to CreateRooms (20100204012323)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "building_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012323')[0m
+Migrating to CreateLessons (20100204012428)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "lessons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012428')[0m
+Migrating to CreateCourses (20100204012553)
+  [4;36;1mSQL (6.0ms)[0m   [0;1mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "room_id" integer NOT NULL, "semester_id" integer NOT NULL, "name" varchar(255) NOT NULL, "description" text NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012553')[0m
+Migrating to CreateUsers (20100204012650)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "password" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (3.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012650')[0m
+Migrating to CreateStudents (20100204012743)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012743')[0m
+Migrating to CreateInstructors (20100204012827)
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE TABLE "instructors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "course_id" integer NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012827')[0m
+Migrating to CreateSemesters (20100204012919)
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCREATE TABLE "semesters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204012919')[0m
+Migrating to CreateLinks (20100204013011)
+  [4;36;1mSQL (6.0ms)[0m   [0;1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer NOT NULL, "name" varchar(255) NOT NULL, "url" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100204013011')[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("buildings")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("courses")[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_list("instructors")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mPRAGMA index_list("lessons")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("links")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("rooms")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("semesters")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("students")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mCourse Load (3.0ms)[0m   [0;1mSELECT * FROM "courses" LIMIT 1[0m
+  [4;35;1mRoom Load (1.0ms)[0m   [0mSELECT * FROM "rooms" WHERE ("rooms"."id" = 220479108) [0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2010-02-03 23:53:53) [GET]
+  [4;36;1mCourse Load (9.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 588ms (View: 350, DB: 9) | 200 OK [http://localhost/courses]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-02-03 23:53:57) [GET]
+  Parameters: {"id"=>"37330886"}
+  [4;35;1mCourse Load (1.0ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 37330886) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+  [4;36;1mRoom Load (3.0ms)[0m   [0;1mSELECT * FROM "rooms" WHERE ("rooms"."id" = 220479108) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "students" WHERE ("students".course_id = 37330886) [0m
+Completed in 184ms (View: 119, DB: 5) | 200 OK [http://localhost/courses/37330886]
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2010-02-03 23:54:34) [GET]
+  Parameters: {"id"=>"rooms"}
+  [4;36;1mCourse Load (1.0ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Course with ID=rooms):
+  app/controllers/courses_controller.rb:16:in `show'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (386.0ms)
+Rendered rescues/_request_and_response (8.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing RoomsController#index (for 127.0.0.1 at 2010-02-03 23:54:49) [GET]
+  [4;35;1mRoom Load (7.0ms)[0m   [0mSELECT * FROM "rooms" [0m
+Rendering template within layouts/rooms
+Rendering rooms/index
+Completed in 219ms (View: 175, DB: 7) | 200 OK [http://localhost/rooms]

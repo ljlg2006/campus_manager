@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+jean_cst100_2010_spring:
+  user: jean
+  course: 2010_cst100_spring
+
+nancy_cst533_2010_spring:
+  user: nancy
+  course: 2010_cst533_spring
+  
+ross_cst533_2010_spring:
+  user: ross
+  course: 2010_cst533_spring
+  
+jean_cst420_2010_spring:
+  user: jean
+  course: 2010_cst420_spring
+  
+ross_cst556_2010_spring:
+  user: ross
+  course: 2010_cst556_spring

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+cntr:
+  code: CNTR
+  name: Academic Center
+  description: located in the center of the Polytechnic campus and across from the Student Union, is a hub of activity. 
+    
+prlta:
+  code: Prlta
+  name: PRLTA
+  description: Located at the center of the Polytechnic campus
+santn:
+  code: Santn
+  name: Santan Hall
+  description: ooo

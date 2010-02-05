@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+asu_cst533_spring:
+  course: cst533_spring
+  name: Arizona State University
+  url: http://asu.edu
+
+instructor_cst533_spring:
+  course: cst533_spring
+  name: Instructor Profile
+  url: http://www.public.asu.edu/~conmotto
