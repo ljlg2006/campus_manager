@@ -1,26 +1,23 @@
-<h1>Listing courses</h1>
+<h1><%= @title="Courses"%></h1>
+
 
 <table>
-  <tr>
-    <th>Room</th>
-    <th>Semester</th>
-    <th>Name</th>
-    <th>Description</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Semester</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Location</th>
+      <th>Students</th>
+      <th>Instructors</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
 
-<% @courses.each do |course| %>
-  <tr>
-    <td><%=h course.room_id %></td>
-    <td><%=h course.semester_id %></td>
-    <td><%=h course.name %></td>
-    <td><%=h course.description %></td>
-    <td><%= link_to 'Show', course %></td>
-    <td><%= link_to 'Edit', edit_course_path(course) %></td>
-    <td><%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+<tbody><%= render :partial => 'courses/row', :collection => @courses %>
+</tbody>
 </table>
 
 <br />
 
-<%= link_to 'New course', new_course_path %>
+<%= link_to'New course',new_course_path%>
