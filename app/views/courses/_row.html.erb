@@ -1,0 +1,12 @@
+<% course = row %>
+<tr>
+	<td><%=h course.semester.name %></td>
+	<td><%=h course.name %></td>
+	<td><%=h course.description %></td>
+	<td><%=h "#{course.room.building.name} #{course.room.name}"%></td>
+	<td><%=h course.students.count %></td>
+	<td><%=h course.instructors.count %></td>
+    <td><%= link_to 'Edit', edit_course_path(course) %>
+        <%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete %>
+        <%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>
