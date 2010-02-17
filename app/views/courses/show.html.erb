@@ -1,36 +1,18 @@
-<p><%=h @course.description%></p>
 
-    <p><b>Building</b>: <%= link_to h(@course.room.building.name), building_path(@course.room.building) %><p>
-    <p><b>Room</b>: <%= link_to h(@course.room.name), room_path(@course.room) %></tr>
-    <p><b>Students</b>: <%= link_to @course.students.count%></p>
-    <p><b>Instructors</b>: <%= link_to @course.instructors.count%></p>
+<p>
+  <b>Name:</b>
+  <%=h @course.name %>
+</p>
 
-<h2>Students</h2>
-<table>
-      <thead>
-          <tr>
-            <th>Email</th>
-            <th>Enrolled Courses</th>
-            <th>Actions</th>
-          </tr>
-      </thead>
-      <tbody>
-          <%= render :partial => 'students/row', :collection => @course.students %>
-      </tbody>
-</table>
+<p>
+  <b>Description:</b>
+  <%=h @course.description %>
+</p>
 
-<h2>Instructors</h2>
-<table>
-      <thead>
-          <tr>
-            <th>Email</th>
-            <th>Courses Taught</th>
-            <th>Actions</th>
-          </tr>
-      </thead>
-        <tbody>
-          <%= render :partial => 'instructors/row', :collection => @course.instructors %>
-        </tbody>
-</table>
+ <p><b>Building</b>: <%= link_to @course.room.building.name %><p>
+<p><b>Room</b>: <%= link_to @course.room.name %></tr>
+<p><b>Students</b>: <%= link_to @course.students.count %></p>
+<p><b>Instructors</b>: <%= link_to @course.instructors.count %></p>
 
-    
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

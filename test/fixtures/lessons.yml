@@ -3,9 +3,9 @@
 cst533_1:
   course: 2010_cst533_spring
   name: Introduction
-  description: MyText
+  description: introduction to the class
 
 cst533_2:
   course: 2010_cst533_spring
-  name: Horizontal Architectures
-  description: MyText
+  name: ruby on rails
+  description: descript how ruby on rails works

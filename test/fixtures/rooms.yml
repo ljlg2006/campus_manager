@@ -1,33 +1,30 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-cntr_120:
-  building: cntr
-  name: 120
-  description: rrrrrr
+santan101:
+  building: santan
+  name: 101
+  description: santan 101 is a room
 
-cntr_130:
-  building: cntr
-  name: 130
-  description: ssssss
+santan102:
+  building: santan
+  name: 102
+  description: santan 102 is a room
+
+santan103:
+  building: santan
+  name: 103
+  description: santan 103 is a room 
+
+santan104:
+  building: santan
+  name: 104
+  description: santan 104 is a room
   
-cntr_152:
-  building: cntr
-  name: 152
-  description: ssssss
-  
-prlta_201:
-  building: prlta
-  name: 130
-  description: ssssss
+<% for i in 1..80 %>
 
-prlta_213:
-  building: prlta
-  name: 213
-  description: good
+santan<%= i %>:
+  building: santan
+  name: "<%= i %>"
+  description: "A typical classroom"
 
-santn_339:
-  building: santn
-  name: 339
-  description: tio
-
-
+<%end%>

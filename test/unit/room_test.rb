@@ -1,8 +1,16 @@
 require 'test_helper'
 
 class RoomTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  fixtures :all
+  
+  test "room require all fields" do
+    r = Room.new
+    b = Building.find(:first)
+    r.building = b
+    r.name = '123'
+    r.description = 'room test'
+    
+    assert r.valid?
   end
+  
 end

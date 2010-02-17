@@ -1,11 +1,26 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-2010_spring:
+201003:
   name: Spring 2010
-  start_date: 2010-01-18
-  end_date: 2010-05-06
-
-2010_fall:
+  start_date: 2010-01-01
+  end_date: 2010-06-01
+ 
+201009:
   name: Fall 2010
-  start_date: 2010-08-21
-  end_date: 2010-12-16
+  start_date: 2010-08-01
+  end_date: 2010-12-3
+  
+201103:
+  name: Spring 2011
+  start_date: 2011-01-01
+  end_date: 2011-06-01
+
+201109:
+  name: Fall 2011
+  start_date: 2011-08-01
+  end_date: 2011-12-3
+  
+201203:
+  name: Spring 2012
+  start_date: 2012-01-01
+  end_date: 2012-06-01

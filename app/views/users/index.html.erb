@@ -1,21 +1,21 @@
 <h1>Listing users</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th>Password</th>
-      <th>Email</th>
-      <th>Course taken</th>
-      <th>Course taught</th>
-      <th>Location</th>
-    </tr>
-  </thead>
+<thead>
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Email</th>
+	<th>Course taken</th>
+	<th>Course taught</th>
+	<th>Location</th>
+  </tr>
+</thead>
 
-  <tbody>
-    <%= render :partial => "row", :collection => @users %>
-  </tbody>
+<tbody>
+	<%= render :partial => "row", :collection => @users %>
+</tbody>
 </table>
 <br />
 
-<%= link_to'New user',new_user_path%>
+<%= link_to 'New user', new_user_path %>

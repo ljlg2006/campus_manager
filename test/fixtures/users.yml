@@ -1,35 +1,40 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-alice:
-  name: Alice
-  password: aaa
-  email: alice@example.com
+19850101:
+  username: user1_student
+  password: user1
+  email: user1@user1.com
 
-bruce:
-  name: Bruce 
-  password: aaa
-  email: bruce@example.com
+19850102:
+  username: user2_student
+  password: user2
+  email: user2@user2.com
   
-tom:
-  name: Tom 
-  password: aaa
-  email: tom@example.com
+19850103:
+  username: user3_student
+  password: user3
+  email: user3@user3.com
+    
+19850104:
+  username: user4_instructor
+  password: user4
+  email: user4@user4.com
+      
+19850105:
+  username: user5_innstructor
+  password: user5
+  email: user5@user5.com 
+    
+19850106:
+  username: user6_test
+  password: user6
+  email: user6@user6.com 
   
-jean:
-  name: Jean 
-  password: aaa
-  email: jean@example.com
-  
-nancy:
-  name: Nancy 
-  password: aaa
-  email: nancy@example.com
-  
-ross:
-  name: ross 
-  password: ross
-  email: ross@example.com
-  
-  
-# Users that will be both teachers and students..
-
+# <% for i in 1..80 %>
+# 
+# user<%= i %>:
+#   username: "user<%=i%>_test"
+#   password: "user<%=i%>_test"
+#   email: "user<%=i%>@test.com"
+# 
+# <%end%>      

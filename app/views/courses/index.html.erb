@@ -1,23 +1,24 @@
-<h1><%= @title="Courses"%></h1>
-
+<h1>Listing courses</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Semester</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Location</th>
-      <th>Students</th>
-      <th>Instructors</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
+<thead>
+  <tr>
+    <th>Semester</th>
+    <th>Name</th>
+    <th>Description</th>
+	<th>Location</th>
+	<th>Students</th>
+	<th>Instructors</th>
+	<th>Actions</th>
+  </tr>
+</thead>
 
-<tbody><%= render :partial => 'courses/row', :collection => @courses %>
+<tbody>
+	<%= render :partial => "row", :collection => @courses %>
 </tbody>
 </table>
 
 <br />
 
-<%= link_to'New course',new_course_path%>
+
+<%= link_to 'New course', new_course_path %>
